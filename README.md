@@ -44,3 +44,6 @@
 
 ![4nJF7G6wOXmGbRCjE5XeHw224LzUYnoPlLBBrZXVMHxpeXLE7WOl5YrpgdDICWEGvSN3FxoUnX5vPRg9nzxgtKZS](https://github.com/user-attachments/assets/0275ffa7-3854-4541-a40c-b947dd7b04f6)
 
+Премичание: в последнем выводе могут возникать проблемы при вводе русского текста, эта проблема 
+может возникнуть из-за разности кодировок. При вводе англоязычного текста, то такой проблемы не возникает.
+
