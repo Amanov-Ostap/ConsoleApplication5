@@ -22,22 +22,25 @@
 После описания основного массива и отбора данных в новый массив идёт сортировка, в выводе 
 указывается положение элементов до сортировки и после сортировки.
 
-тут скрин![kjiaF0n0MRdPimY0a6J12mEx_Oy-KA_ZrKW6bFXoF7taqrmHnC6wEft0z_J-jYSyhHGsrUFAnJkqkr0xHp-fyfiS](https://github.com/user-attachments/assets/3d05dd26-9443-4d4b-bd73-8b0f145a2c9c)
+![kjiaF0n0MRdPimY0a6J12mEx_Oy-KA_ZrKW6bFXoF7taqrmHnC6wEft0z_J-jYSyhHGsrUFAnJkqkr0xHp-fyfiS](https://github.com/user-attachments/assets/3d05dd26-9443-4d4b-bd73-8b0f145a2c9c)
 
 
 Далее программа по запросу выводит всю информацию по определённому поезду. 
 Необходимо ввести номер маршрура, в выводе отоброзится название маршрута, пункты 
 отправления и прибытия и так далее.
 
-тут скрин
+![ebgMHAVaPlL-0dd89aU_qGyjnOcvcABtC_e0CZfzj38HuQtycdWzrYicSSp3p1xBcWc7bpZ2UpIN4exNbQwNUCql](https://github.com/user-attachments/assets/4e528972-8411-4ef3-94ac-4d17cba4c8e5)
+
 
 Далее прогрмма выводит 3 самых коротких поезда задонного массива.
 
-тут скрин 
+![HpAtDHqUcRLiXMx8t69AboL0OAPmKlwimN8YCZ2P2C-zEFN3TTcyRg6zjz1ThpjdEFUYBZxsG5pT6_BWP4gxBHtE](https://github.com/user-attachments/assets/4759e934-b342-4b01-89b7-472a21f442e2)
+
 
 Далее в программе реализоывнно изминение маршрута следования, программа получает на вход 
 сначало номер маршрута затем необходимо указать новые пункты отпревления и назначения, 
 далее программа выведет номер поехзда, затем укажит, что изначальный маршрут был изменён на новый, 
 который был введён с консоли.
 
-тут скрин
+![4nJF7G6wOXmGbRCjE5XeHw224LzUYnoPlLBBrZXVMHxpeXLE7WOl5YrpgdDICWEGvSN3FxoUnX5vPRg9nzxgtKZS](https://github.com/user-attachments/assets/0275ffa7-3854-4541-a40c-b947dd7b04f6)
+
