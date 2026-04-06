@@ -62,7 +62,7 @@ void short_number(Train name[]) {
 	}
 	cout << "\n3 самых коротких поезда:" << endl;
 	for (int i = 0; i < 3; i++) {
-		cout << tourist[i].route_name << ": " << tourist[i].number_of_cars << " Вагонов" << endl;
+		cout << name[i].route_name << ": " << name[i].number_of_cars << " Вагонов" << endl;
 	}
 }
 
