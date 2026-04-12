@@ -1,5 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 int k;
@@ -28,6 +29,7 @@ Train tourist[20];
 
 // Функция для отбора поезка по его типу 
 void reassigned(const Train orig[], Train nowel[], Train_Type type) {
+	k = 0;
 	for (int i = 0; i < 20; i++) {
 		if (orig[i].type == type) {
 			nowel[k] = orig[i];
@@ -79,10 +81,10 @@ void tip(Train which[], int i) {
 void recap(Train name[]) {
 
 	int t;
-	cout << "\nВведите номер поезда:" << endl;
+	cout << "\nВведите номер поезда для отображения полной информации:" << endl;
+	cout << "Введите от 1 до " << k << endl;
 	cin >> t;
 	t--;
-
 	cout << "\nНазвание маршрута: " << name[t].route_name << endl;
 	cout << "Пункт Отправления: " << name[t].depatrute_point << endl;
 	cout << "Пункт прибытия: " << name[t].arrival_point << endl;
@@ -118,6 +120,73 @@ void outpute_of_name(Train output[]) {
 	for (int i = 0; i < k; i++) {
 		cout << output[i].depatrute_point << endl;
 	}
+}
+
+// Функция для зaписи в файл
+void write_file(Train write[]) {
+	ofstream file;
+	file.open("File for train");
+
+	for (int i = 0; i < 20; i++) {
+		file << write[i].route_name << " ";
+		file << write[i].depatrute_point << " ";
+		file << write[i].arrival_point << " ";
+		file << write[i].departure_time.h << ":" << write[i].departure_time.m << " ";
+		file << write[i].arrival_time.h << ":" << write[i].arrival_time.m << " ";
+		file << write[i].number_of_cars << " ";
+		switch (write[i].type) {
+		case Train_Type::Пассажирский: file << "Пассажирский" << endl; break;
+		case Train_Type::Товарный: file << "Товарный" << endl; break;
+		case Train_Type::Ремонтный: file << "Ремонтный" << endl; break;
+		}
+	}
+	file.close();
+}
+
+// Функция для чтения из файла
+void read_file() {
+	ifstream file;
+	string str;
+
+	file.open("File for train");
+	if (file.is_open()) {
+		while (!file.eof()) {
+			getline(file, str);
+			cout << str << endl;
+		}
+	}
+	file.close();
+}
+
+// Функция для изменения в файле
+void rerol(Train re[]) {
+	fstream file;
+	string str = "Таганрок";
+	bool chang = false;
+	file.open("File for train");
+	for (int i = 0; i < 20; i++) {
+		if (re[i].depatrute_point == "Челябинск") {
+			re[i].depatrute_point = str;
+			chang = true;
+		}
+	}
+	if (chang) {
+		write_file(re);
+	}
+}
+
+// Запись в бинарный файл
+void write_to_binary() {
+	fstream file("File for train to binary", ios::binary);
+	file.write((char*)trains, sizeof(trains));
+	file.close();
+}
+
+// Чтение из бинарного файла
+void load_from_binary() {
+	ifstream file("File for train to binary", ios::binary);
+	file.read((char*)trains, sizeof(trains));
+	file.close();
 }
 
 int main() {
@@ -165,4 +234,29 @@ int main() {
 
 	// Указываем для какого типа поезда изменить маршрут
 	change_point(trains);
+
+
+	cout << endl << endl;
+
+	// Считываем и записываем структуру в файл
+	write_file(trains);
+
+	// Читаем из файла
+	cout << "Структура из файла:" << endl;
+	read_file();
+
+	cout << endl << endl;
+
+	// Изменение данных в файле
+	cout << "Изменённая структура из файла:" << endl;
+	rerol(trains);
+	read_file();
+
+	// Запись в бинарный файл
+	write_to_binary();
+
+	// Чтение из бинарного файла
+	load_from_binary();
+
+
 }
